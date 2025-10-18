@@ -165,6 +165,49 @@ const Index = () => {
           <i className="bi bi-arrow-right text-black dark:text-white"></i>
         </div>
       </div>
+      {/* Explore topics */}
+
+      <div className="px-[8%] lg:px-[12%] explore-topic py-10 flex flex-col justify-center items-center">
+        <h2 className="text-sm uppercase text-center tracking-wider mb-6 font-bold">
+          Expore Trending Topics
+        </h2>
+          <div className="flex flex-wrap justify-center gap-4 w-[100%] lg:w-[80%]">
+            {/* each topic item */}
+              <div className="topic-box flex items-center gap-2 px-6 py-2  border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+                  <Image src={topic1} alt="topic1"/>
+                  <span className="font-medium text-xl"> Technology</span>
+              </div>
+              <div className="topic-box flex items-center gap-2 px-6 py-2 border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+                  <Image src={topic2} alt="topic1"/>
+                  <span className="font-medium text-xl"> Travel</span>
+              </div>
+              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+                  <Image src={topic3} alt="topic1"/>
+                  <span className="font-medium text-xl"> sport</span>
+              </div>
+              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+                  <Image src={topic4} alt="topic1"/>
+                  <span className="font-medium text-xl"> Business</span>
+              </div>
+              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+                  <Image src={topic5} alt="topic1"/>
+                  <span className="font-medium text-xl"> Management</span>
+              </div>
+              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+                  <Image src={topic6} alt="topic1"/>
+                  <span className="font-medium text-xl"> Trends</span>
+              </div>
+              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+                  <Image src={topic7} alt="topic1"/>
+                  <span className="font-medium text-xl"> Startups</span>
+              </div>
+              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+                  <Image src={topic8} alt="topic1"/>
+                  <span className="font-medium text-xl"> News</span>
+              </div>
+          </div>
+      </div>
+
     </>
   );
 };
