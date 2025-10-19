@@ -73,7 +73,7 @@ if (!blog)
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="w-full lg:w-8/12">
             <p className="text-black dark:text-[var(--text-light)] mb-6 leading-relaxed ">
-              In today's ever-evolving world, storytelling has become a powerful
+              In today&apos;s ever-evolving world, storytelling has become a powerful
               tool for connection. Revision provides a unique platform for
               individuals to share their stories.
             </p>
@@ -153,7 +153,7 @@ if (!blog)
             </h2>
             <p className="text-black dark:text-[var(--text-light)] mb-6">
               There are several ways to ensure your content builds these
-              connections effectively. Here's What they are:
+              connections effectively. Here&apos;s What they are:
             </p>
             <h3 className="text-sl font-semibold mb-2">
               {" "}

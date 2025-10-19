@@ -300,7 +300,7 @@ export const Blog = () => {
               </h2>
               <p>
                 A deep dive into emotional experiences and personal growth,
-                sharing valuable insights on life's most meaningful moments.
+                sharing valuable insights on life&apos;s most meaningful moments.
               </p>
             </div>
 
