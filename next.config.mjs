@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "techcrunch.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+        pathname: "/**",
+      },
     ],
   },
 };

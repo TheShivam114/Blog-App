@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-/* @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+html {
+  scroll-behavior: smooth;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
 
 :root {
   --prim-color: #f4e005;
@@ -85,9 +89,9 @@ body {
   transform: scale(1.02);
 }
 
-/* ------------------------------
+/* 
    Responsive Adjustments
------------------------------- */
+ */
 @media (max-width: 1024px) {
   .swiper-btn-prev {
     left: 3% !important;
@@ -173,4 +177,47 @@ body {
 }
 .topic-box:hover img{
 filter:grayscale(0);
+}
+.mini-slide{
+  background-image: url(src//assets//image/mini-slide-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  width: 100%;
+  height: 280px;
+  position: relative;
+  z-index: 5;
+}
+.mini-slide::after{
+content: "";
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index:-1;
+}
+.mini-slide2{
+   background-image: url(src//assets//image/mini-slide-2.png);
+
+}
+.mini-slide3{
+   background-image: url(src//assets//image/mini-slide-3.png);
+
+}
+@media screen and (max-width:1199px){
+.blog.img{
+  height: 300px;
+}
+}
+@media screen and (max-width:991px){
+.mini-slide{
+  height: 400px;
+}
+}
+@media screen and (max-width:767px){
+.mini-slide{
+  height: 100%;
+}
 }

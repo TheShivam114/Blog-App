@@ -17,6 +17,24 @@ const Index = () => {
     const prevRef=useRef(null);
     const nextRef=useRef(null);
     const[isReady,setIsReady]=useState(false);
+    const scrollToBlogs = () => {
+        if (typeof document !== "undefined") {
+            const el = document.getElementById("blogs");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+    const scrollToCategories = () => {
+        if (typeof document !== "undefined") {
+            const el = document.getElementById("categories");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+    const selectCategory = (category) => {
+        if (typeof window !== "undefined") {
+            window.location.hash = `cat=${encodeURIComponent(category)}`;
+            scrollToCategories();
+        }
+    };
     useEffect(()=>{
         setIsReady( true ) ;
 
@@ -72,7 +90,7 @@ const Index = () => {
                     powerful tool for connection. Revision provides a unique
                     platform for individuals to...
                   </p>
-                  <button className="bg-white px-6 py-2 mt-5 rounded text-blue-800 font-bold hover:bg-black hover:text-white hover:shadow-lg transition duration-300">
+                  <button onClick={scrollToBlogs} className="bg-white px-6 py-2 mt-5 rounded text-blue-800 font-bold hover:bg-black hover:text-white hover:shadow-lg transition duration-300">
                     Discover More
                   </button>
                 </div>
@@ -106,7 +124,7 @@ const Index = () => {
                     Find out why 2024 is predicted to be a pivotal year for
                     sports technology and its impact on teh industry...
                   </p>
-                  <button className="bg-white px-6 py-2 mt-5 rounded text-blue-800 font-bold hover:bg-black hover:text-white hover:shadow-lg transition duration-300">
+                  <button onClick={scrollToBlogs} className="bg-white px-6 py-2 mt-5 rounded text-blue-800 font-bold hover:bg-black hover:text-white hover:shadow-lg transition duration-300">
                     Discover More
                   </button>
                 </div>
@@ -140,7 +158,7 @@ const Index = () => {
                     Discover the cutting-edge tech gadgets making travek smarter
                     and more convenients in 2024
                   </p>
-                  <button className="bg-white px-6 py-2 mt-5 rounded text-blue-800 font-bold hover:bg-black hover:text-white hover:shadow-lg transition duration-300">
+                  <button onClick={scrollToBlogs} className="bg-white px-6 py-2 mt-5 rounded text-blue-800 font-bold hover:bg-black hover:text-white hover:shadow-lg transition duration-300">
                     Discover More
                   </button>
                 </div>
@@ -173,35 +191,35 @@ const Index = () => {
         </h2>
           <div className="flex flex-wrap justify-center gap-4 w-[100%] lg:w-[80%]">
             {/* each topic item */}
-              <div className="topic-box flex items-center gap-2 px-6 py-2  border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+              <div onClick={()=>selectCategory('Technology')} className="topic-box flex items-center gap-2 px-6 py-2  border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
                   <Image src={topic1} alt="topic1"/>
                   <span className="font-medium text-xl"> Technology</span>
               </div>
-              <div className="topic-box flex items-center gap-2 px-6 py-2 border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+              <div onClick={()=>selectCategory('Travel')} className="topic-box flex items-center gap-2 px-6 py-2 border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
                   <Image src={topic2} alt="topic1"/>
                   <span className="font-medium text-xl"> Travel</span>
               </div>
-              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+              <div onClick={()=>selectCategory('sport')} className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
                   <Image src={topic3} alt="topic1"/>
                   <span className="font-medium text-xl"> sport</span>
               </div>
-              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+              <div onClick={()=>selectCategory('Business')} className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
                   <Image src={topic4} alt="topic1"/>
                   <span className="font-medium text-xl"> Business</span>
               </div>
-              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+              <div onClick={()=>selectCategory('Management')} className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
                   <Image src={topic5} alt="topic1"/>
                   <span className="font-medium text-xl"> Management</span>
               </div>
-              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+              <div onClick={()=>selectCategory('Trends')} className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
                   <Image src={topic6} alt="topic1"/>
                   <span className="font-medium text-xl"> Trends</span>
               </div>
-              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+              <div onClick={()=>selectCategory('Startups')} className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
                   <Image src={topic7} alt="topic1"/>
                   <span className="font-medium text-xl"> Startups</span>
               </div>
-              <div className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
+              <div onClick={()=>selectCategory('News')} className="topic-box flex items-center gap-2 px-6 py-2 bg-[#111] border border-gray-700 bg-gray-50/10 hover:bg-gray-50/15 rounded-full shadow-sm hover:shadow-md cursor-pointer transition">
                   <Image src={topic8} alt="topic1"/>
                   <span className="font-medium text-xl"> News</span>
               </div>

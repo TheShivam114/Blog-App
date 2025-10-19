@@ -14,7 +14,7 @@ const Footer = () => {
             Subscribe to our email newsletter to get the latest posts delivered{" "}
             <b>right to your email.</b>
           </p>
-          <form className="w-[80%] md:w-[45%] flex items-center bg-[#1e1e1e] rounded-xl p-2 shadow-inner">
+          <form onSubmit={(e)=>{e.preventDefault();}} className="w-[80%] md:w-[45%] flex items-center bg-[#1e1e1e] rounded-xl p-2 shadow-inner">
             <input
               type="email"
               placeholder="Enter your Email"
