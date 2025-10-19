@@ -41,16 +41,19 @@ export const Blog = () => {
     return Array.from(set);
   }, []);
 
-  const categoryMap = useMemo(() => ({
-    Technology: ["Tech", "AI", "Apps", "Gadgets", "Security"],
-    Travel: ["Travel"],
-    sport: ["Sport", "Sports"],
-    Business: ["Business", "Fintech", "Work", "Enterprise"],
-    Management: ["Growth", "Work", "Management"],
-    Trends: ["Trends", "Tech"],
-    Startups: ["Startups"],
-    News: ["News", "AI", "Tech"],
-  }), []);
+  const categoryMap = useMemo(
+    () => ({
+      Technology: ["Tech", "AI", "Apps", "Gadgets", "Security"],
+      Travel: ["Travel"],
+      Sport: ["Sport", "Sports"],
+      Business: ["Business", "Fintech", "Work", "Enterprise"],
+      Management: ["Growth", "Work", "Management"],
+      Trends: ["Trends", "Tech"],
+      Startups: ["Startups"],
+      News: ["News", "AI", "Tech"],
+    }),
+    []
+  );
 
   const filteredBlogs = useMemo(() => {
     if (selectedCategory === "All") return blogs;
@@ -135,7 +138,7 @@ export const Blog = () => {
 
         {/* Sidebar Section */}
         <div className="w-full lg:w-4/12 sticky top-[80px] left-0 max-h-[calc(100vh-120px)] overflow-y-auto pr-2">
-          {/* box1 */}
+          {/* About Box */}
           <div className="bg-gray-50/10 rounded-lg shadow-lg border border-[#83838380] p-4">
             <span className="uppercase text-[14px]">About</span>
             <div className="flex items-center my-3 gap-1">
@@ -162,13 +165,15 @@ export const Blog = () => {
           </div>
 
           {/* Featured Posts */}
-          <h2 id="latest" className="uppercase my-5 font-bold">Featured Posts</h2>
+          <h2 id="latest" className="uppercase my-5 font-bold">
+            Featured Posts
+          </h2>
 
           <Swiper
             slidesPerView={1}
             spaceBetween={30}
-            loop={true} // ✅ fixed typo (was 'lopp')
-            autoplay={{ delay: 1500, disableOnInteraction: false }} // ✅ lowercase 'autoplay'
+            loop={true}
+            autoplay={{ delay: 1500, disableOnInteraction: false }}
             modules={[Navigation, Autoplay]}
             className="rounded-md"
           >
@@ -229,105 +234,10 @@ export const Blog = () => {
               </div>
             </SwiperSlide>
           </Swiper>
-          {/* box2 */}
-          <div id="history" className="bg-gray-50/10 rounded-lg shadow-lg border border-[#83838380] p-4 mt-10">
-            <span className="uppercase text-[14px]">Work Experience</span>
-            <div className="flex flex-col my-3 border-[#83838380] pb-4">
-              <div className="flex justify-between w-full">
-                <h2> Product Designer</h2>
-                <h5>2024 - now</h5>
-              </div>
-              <p className="text-gray-400">Pioneer</p>
-            </div>
-
-            <div className="flex flex-col my-3 border-[#83838380] pb-4">
-              <div className="flex justify-between w-full">
-                <h2> Product Designer</h2>
-                <h5>2024 - 2025</h5>
-              </div>
-              <p className="text-gray-400">Pioneer</p>
-            </div>
-
-            <div className="flex flex-col my-3 ">
-              <div className="flex justify-between w-full">
-                <h2> Product Designer</h2>
-                <h5>2024 - 2025</h5>
-              </div>
-              <p className="text-gray-400">Pioneer</p>
-            </div>
-          </div>
-          {/* box3 */}
-
-          <div id="tags" className="bg-gray-50/10 rounded-lg shadow-lg border border-[#83838380] p-4 mt-10">
-            <span className="uppercase text-[14px]">Technologies</span>
-            <div className="flex items-center gap-3 my-6">
-              <Image src={figma} alt="" className="w-12 rounded-lg" />
-              <div className="">
-                <h2 className="font-bold text-xl"> Figma</h2>
-                <p className="font-[300]">
-                  Collaborate and design interfaces real-time.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 my-6">
-              <Image src={notion} alt="" className="w-12 rounded-lg" />
-              <div className="">
-                <h2 className="font-bold text-xl"> Notion</h2>
-                <p className="font-[300]">
-                  Organize, track, and collaborate on projects easily
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 my-6">
-              <Image src={AI} alt="" className="w-12 rounded-lg" />
-              <div className="">
-                <h2 className="font-bold text-xl"> Illustrator</h2>
-                <p className="font-[300]">
-                  Create precise vector graphics and illustrations.
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* box-4 */}
-          <div className="bg-gray-50/10 rounded-lg shadow-lg border border-[#83838380] p-4 mt-10">
-            <span className="uppercase text-[14px]">Creation</span>
-            <div className="my-5">
-              <h2 className="pb-2 font-bold text-xl hover:text-yellow-400 cursor-pointer transition">
-                Heartfelt Reflections
-                <i className="bi bi-box-arrow-in-up-ring"></i>
-              </h2>
-              <p>
-                A deep dive into emotional experiences and personal growth,
-                sharing valuable insights on life&apos;s most meaningful moments.
-              </p>
-            </div>
-
-            <div className="my-5">
-              <h2 className="pb-2 font-bold text-xl hover:text-yellow-400 cursor-pointer transition">
-                Latest Tech Gadgets
-                <i className="bi bi-box-arrow-in-up-ring"></i>
-              </h2>
-              <p>
-                Explore the newest and most innovative technology products
-                hitting the market, from smart devices to cutting-edge tools.
-              </p>
-            </div>
-
-            <div className="my-5">
-              <h2 className="pb-2 font-bold text-xl hover:text-yellow-400 cursor-pointer transition">
-                Trends for 2025
-                <i className="bi bi-box-arrow-in-up-ring"></i>
-              </h2>
-              <p>
-                A look ahead at the emerging trends that will shape the world in
-                2024, from lifestyle shifts to groundbreaking innovations.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   );
 };
+
+export default Blog;
